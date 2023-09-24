@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather Dashboard</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Weather Dashboard</h1>
+            <div class="timer">
+                <input id="input" type="text" placeholder="Enter Location" />
+                <button id="submit" class="submit">Submit</button>
+            </div>
+        </header>
+        <main>
+            <div id="lowerHeader">
+                <ul>
+                    <li>Link</li>
+                    <li>Link</li>
+                    <li>Link</li>
+                    <li>Link</li>
+                </ul>
+            </div>
+
+            <div class="container">
+                <div id="panel3" class="panel">
+                    <h1 id="location">Location</h1>
+                </div>
+                <div id="panel2" class="panel">
+                    <h3 id="windSpeed" class="inlineIcon">Wind Speed:</h3>
+                    <h3 id="windGust">Wind Gust:</h3>
+                    <h3 id="windDirection">Wind Direction:</h3>
+                </div>
+                <div id="panel3" class="panel">
+                    <h3 id="currentTemp">Current Temp:</h3>
+                    <h3 id="feelsLike">Feels Like:</h3>
+                    <h3 id="humidity">Humidity:</h3>
+                </div>
+
+                <div id="fiveDayPanel" class="container">
+                    <div class="daySlot">
+                        <h3 class="date" id="day1"></h3>
+                        <h4 id="temp1">Temp:</h4>
+                        <h4 id="wind1">Wind:</h4>
+                        <h4 id="humidity1">Humidity:</h4>
+                    </div>
+                    <div class="daySlot">
+                        <h3 class="date" id="day2"></h3>
+                        <h4 id="temp2">Temp:</h4>
+                        <h4 id="wind2">Wind:</h4>
+                        <h4 id="humidity2">Humidity:</h4>
+                    </div>
+                    <div class="daySlot">
+                        <h3 class="date" id="day3"></h3>
+                        <h4 id="temp3">Temp:</h4>
+                        <h4 id="wind3">Wind:</h4>
+                        <h4 id="humidity3">Humidity:</h4>
+                    </div>
+                    <div class="daySlot">
+                        <h3 class="date" id="day4"></h3>
+                        <h4 id="temp4">Temp:</h4>
+                        <h4 id="wind4">Wind:</h4>
+                        <h4 id="humidity4">Humidity:</h4>
+                    </div>
+                    <div class="daySlot">
+                        <h3 class="date" id="day5"></h3>
+                        <h4 id="temp5">Temp:</h4>
+                        <h4 id="wind5">Wind:</h4>
+                        <h4 id="humidity5">Humidity:</h4>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023</p>
+            <p>Designed and Developed by Mason Schnell</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

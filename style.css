@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(87, 89, 230);
+    margin-bottom: 0px;
+    padding: 7px 3%;
+    color: white;
+}
+
+body {
+    min-width: 100vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+.panel {
+    background-color: rgb(87, 89, 230);
+    width: 300px;
+    height: 150px;
+    padding: 1em;
+    border-radius: 10px;
+    margin: 2px;
+    line-height: 2em;
+}
+
+#fiveDayPanel {
+    background-color: rgb(87, 89, 230);
+    width: 908px;
+    height: 150px;
+    padding: 1em;
+    border-radius: 10px;
+    margin: 2px;
+    line-height: 2em;
+}
+
+@media screen and (max-width: 850px) {
+    #fiveDayPanel {
+        height: fit-content;
+    }
+}
+
+input {
+    border-radius: 5px;
+}
+
+button {
+    border-radius: 5px;
+}
+
+.daySlot {
+    width: 160px;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+#panel4 {
+    width: 900px;
+}
+
+.inlineIcon {
+    display: inline-block;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.icon {
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+}
+
+#lowerHeader {
+    background-color: rgb(107, 107, 107);
+    height: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#lowerHeader ul {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+}
+
+#lowerHeader li {
+    text-align: center;
+    flex: 1;
+}
+
+footer {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background-color: rgb(87, 89, 230);
+    margin-top: 470px;
+}
