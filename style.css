@@ -49,6 +49,12 @@ h1 {
     }
 }
 
+@media screen and (max-width: 540px) {
+    #lowerHeader {
+        height: 200px;
+    }
+}
+
 input {
     border-radius: 5px;
 }
@@ -86,9 +92,10 @@ button {
 
 #lowerHeader {
     background-color: rgb(107, 107, 107);
-    height: 30px;
+    height: 40px;
     margin-bottom: 20px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -107,5 +114,17 @@ footer {
     padding-top: 10px;
     padding-bottom: 5px;
     background-color: rgb(87, 89, 230);
-    margin-top: 470px;
+    margin-top: 500px;
+}
+
+.panel {
+    text-align: center;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+#mainIcon {
+    height: 75px;
 }
