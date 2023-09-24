@@ -11,22 +11,19 @@
             <h1>Weather Dashboard</h1>
             <div class="timer">
                 <input id="input" type="text" placeholder="Enter Location" />
-                <button id="submit" class="submit">Submit</button>
+                <button id="submit" class="submit clickable">Submit</button>
             </div>
         </header>
         <main>
             <div id="lowerHeader">
-                <ul>
-                    <li>Link</li>
-                    <li>Link</li>
-                    <li>Link</li>
-                    <li>Link</li>
-                </ul>
+                <ul id="recent-location"></ul>
             </div>
 
             <div class="container">
-                <div id="panel3" class="panel">
+                <div id="panel1" class="panel">
                     <h1 id="location">Location</h1>
+                    <h2 id="date">Date</h2>
+                    <img id="mainIcon" src="" alt="Weather Icon" />
                 </div>
                 <div id="panel2" class="panel">
                     <h3 id="windSpeed" class="inlineIcon">Wind Speed:</h3>
