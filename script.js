@@ -58,13 +58,9 @@ function searchLocation(location) {
             if (data.length === 0) {
                 alert("Location Not Found");
             } else {
-                console.log(data);
                 lon = data[0].lon;
-                console.log(lon);
                 lat = data[0].lat;
-                console.log(lat);
                 geoName = data[0].name;
-                console.log(geoName);
                 displayPage(lat, lon);
             }
         });
@@ -83,9 +79,6 @@ function displayPage(lat, lon) {
             return response.json();
         })
         .then(function (data) {
-            console.log("HERERERERERERER");
-            console.log(data);
-
             var elementIds = [
                 "currentTemp",
                 "feelsLike",
@@ -205,8 +198,6 @@ function getFiveDay(lat, lon) {
                 humidity.innerText =
                     humString + data.list[i * 8].main.humidity + "%";
             }
-
-            console.log(getDate(data.list[0].dt_txt, 0));
         });
 }
 
