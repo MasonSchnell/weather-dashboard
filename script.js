@@ -1,3 +1,4 @@
+// Sets default location to Long Branch
 searchLocation("Long Branch");
 
 // STRING VARIABLES
