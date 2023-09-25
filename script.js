@@ -1,36 +1,57 @@
 searchLocation("Long Branch");
 
+// STRING VARIABLES
+// --------------------------------------------------------
 var windString = "Wind: ";
 var humString = "Humidty: ";
 var tempString = "Temp: ";
+
+// LOCATION VARIABLES
+// --------------------------------------------------------
 var geoName = "";
+var lon = 0;
+var lat = 0;
 
-var submitButton = document.getElementById("submit");
-var input = document.getElementById("input");
-var recentLocation = document.getElementById("recent-location");
-var lowerHeader = document.getElementById("lowerHeader");
-var date = document.getElementById("date");
+// DOM ELEMENTS
+// --------------------------------------------------------
+const submitButton = document.getElementById("submit");
+const input = document.getElementById("input");
+const recentLocation = document.getElementById("recent-location");
+const date = document.getElementById("date");
 
+// EVENT LISTENERS
+// --------------------------------------------------------
 submitButton.addEventListener("click", function () {
     var locationName = input.value;
     input.value = " ";
     searchLocation(locationName);
 });
 
-var lon = 0;
-var lat = 0;
+recentLocation.addEventListener("click", function (eventObj) {
+    var clickedButton = eventObj.target;
+    var loc = clickedButton.innerText;
 
+    if (clickedButton.tagName === "LI") {
+        searchLocation(loc);
+    }
+});
+
+// INITIALIZE LOCAL STORAGE AND RECENT LOCATION BAR
+// --------------------------------------------------------
 setLocalStorage();
 displayRecentLocation();
 
+// FUNCTIONS
+// --------------------------------------------------------
+// Searches for a location and then get longitude and latitude
 function searchLocation(location) {
     fetch(
         "http://api.openweathermap.org/geo/1.0/direct?q=" +
             location +
             "&limit=5&appid=f6aa28f203f516a4b998dd881bfd8fc6"
     )
-        .then(function (thing) {
-            return thing.json();
+        .then(function (response) {
+            return response.json();
         })
         .then(function (data) {
             if (data.length === 0) {
@@ -48,6 +69,7 @@ function searchLocation(location) {
         });
 }
 
+// Displays weather information on the page
 function displayPage(lat, lon) {
     fetch(
         "https://api.openweathermap.org/data/2.5/weather?lat=" +
@@ -56,8 +78,8 @@ function displayPage(lat, lon) {
             lon +
             "&appid=f6aa28f203f516a4b998dd881bfd8fc6"
     )
-        .then(function (thing) {
-            return thing.json();
+        .then(function (response) {
+            return response.json();
         })
         .then(function (data) {
             console.log("HERERERERERERER");
@@ -74,7 +96,7 @@ function displayPage(lat, lon) {
 
             clearInnerTextOfElements(elementIds);
 
-            var panel3 = document.getElementById("panel3");
+            // PANEL 1
             var location = document.getElementById("location");
             var mainIcon = document.getElementById("mainIcon");
 
@@ -83,7 +105,7 @@ function displayPage(lat, lon) {
             var feelsLike = document.getElementById("feelsLike");
             var humidity = document.getElementById("humidity");
 
-            // PANEL 1
+            // PANEL 3
             var windSpeed = document.getElementById("windSpeed");
             var windGust = document.getElementById("windGust");
             var windDirection = document.getElementById("windDirection");
@@ -136,6 +158,7 @@ function displayPage(lat, lon) {
         });
 }
 
+// Gets 5 day weather forecast
 function getFiveDay(lat, lon) {
     fetch(
         "https://api.openweathermap.org/data/2.5/forecast?lat=" +
@@ -144,8 +167,8 @@ function getFiveDay(lat, lon) {
             lon +
             "&appid=f6aa28f203f516a4b998dd881bfd8fc6"
     )
-        .then(function (thing) {
-            return thing.json();
+        .then(function (response) {
+            return response.json();
         })
         .then(function (data) {
             var elementIds = [];
@@ -186,6 +209,7 @@ function getFiveDay(lat, lon) {
         });
 }
 
+// Converts kelvin to fahrenheit
 function kelvinToF(kelvin) {
     const celsius = kelvin - 273.15;
     let fahrenheit = celsius * (9 / 5) + 32;
@@ -193,6 +217,7 @@ function kelvinToF(kelvin) {
     return fahrenheit;
 }
 
+// Clears inner text of HTML Elements
 function clearInnerTextOfElements(elementIds) {
     elementIds.forEach(function (elementId) {
         var element = document.getElementById(elementId);
@@ -202,6 +227,7 @@ function clearInnerTextOfElements(elementIds) {
     });
 }
 
+// Formats date
 function getDate(string, date) {
     let month = string.substr(5, 2);
     let year = string.substr(0, 4);
@@ -212,6 +238,7 @@ function getDate(string, date) {
     return string;
 }
 
+// Gets weather icon and displays it
 function getIcon(element, iconTag) {
     var iconURL = "https://openweathermap.org/img/wn/" + iconTag + "@2x.png";
 
@@ -222,6 +249,7 @@ function getIcon(element, iconTag) {
     element.append(image);
 }
 
+// Sets initial values in local storage
 function setLocalStorage() {
     var locationArray = [
         "London",
@@ -234,10 +262,12 @@ function setLocalStorage() {
     localStorage.setItem("location", JSON.stringify(locationArray));
 }
 
+// Gets data from local storage
 function getLocalStorage() {
     return JSON.parse(localStorage.getItem("location")) || [];
 }
 
+// Displays recent location history
 function displayRecentLocation() {
     var array = getLocalStorage();
     for (var i = 0; i < array.length; i++) {
@@ -250,12 +280,3 @@ function displayRecentLocation() {
         recentLocation.append(el);
     }
 }
-
-recentLocation.addEventListener("click", function (eventObj) {
-    var clickedButton = eventObj.target;
-    var loc = clickedButton.innerText;
-
-    if (clickedButton.tagName === "LI") {
-        searchLocation(loc);
-    }
-});

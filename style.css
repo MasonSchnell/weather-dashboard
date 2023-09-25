@@ -1,3 +1,4 @@
+/* Default styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +6,12 @@
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
+/* Typography */
+h1 {
+    text-align: center;
+}
+
+/* Header styles */
 header {
     display: flex;
     align-items: center;
@@ -15,14 +22,12 @@ header {
     color: white;
 }
 
+/* Body and main content*/
 body {
     min-width: 100vh;
 }
 
-h1 {
-    text-align: center;
-}
-
+/* Panel styles */
 .panel {
     background-color: rgb(87, 89, 230);
     width: 300px;
@@ -43,6 +48,21 @@ h1 {
     line-height: 2em;
 }
 
+.panel {
+    text-align: center;
+}
+
+#panel4 {
+    width: 900px;
+}
+
+/* Form elements styles */
+input,
+button {
+    border-radius: 5px;
+}
+
+/* Media queries */
 @media screen and (max-width: 850px) {
     #fiveDayPanel {
         height: fit-content;
@@ -55,26 +75,11 @@ h1 {
     }
 }
 
-input {
-    border-radius: 5px;
-}
-
-button {
-    border-radius: 5px;
-}
-
+/* Day slot and container styles */
 .daySlot {
     width: 160px;
     height: 100%;
     margin-bottom: 10px;
-}
-
-#panel4 {
-    width: 900px;
-}
-
-.inlineIcon {
-    display: inline-block;
 }
 
 .container {
@@ -84,12 +89,18 @@ button {
     align-content: center;
 }
 
+/* Icon styles */
+.inlineIcon {
+    display: inline-block;
+}
+
 .icon {
     height: 30px;
     width: 30px;
     vertical-align: middle;
 }
 
+/* Lower header styles */
 #lowerHeader {
     background-color: rgb(107, 107, 107);
     height: 40px;
@@ -110,21 +121,20 @@ button {
     flex: 1;
 }
 
+/* Footer styles */
 footer {
     padding-top: 10px;
     padding-bottom: 5px;
     background-color: rgb(87, 89, 230);
-    margin-top: 500px;
+    margin-top: 655px;
 }
 
-.panel {
-    text-align: center;
-}
-
+/* Misc */
 .clickable {
     cursor: pointer;
 }
 
+/* Main icon */
 #mainIcon {
     height: 75px;
 }
