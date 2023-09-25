@@ -46,7 +46,7 @@ displayRecentLocation();
 // Searches for a location and then get longitude and latitude
 function searchLocation(location) {
     fetch(
-        "http://api.openweathermap.org/geo/1.0/direct?q=" +
+        "https://api.openweathermap.org/geo/1.0/direct?q=" +
             location +
             "&limit=5&appid=f6aa28f203f516a4b998dd881bfd8fc6"
     )
