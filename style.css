@@ -121,14 +121,6 @@ button {
     flex: 1;
 }
 
-/* Footer styles */
-footer {
-    padding-top: 10px;
-    padding-bottom: 5px;
-    background-color: rgb(87, 89, 230);
-    margin-top: 655px;
-}
-
 /* Misc */
 .clickable {
     cursor: pointer;
